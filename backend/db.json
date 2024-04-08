@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "id": 1, "name": "Nike", "price": "$10.99", "description": "Running." },
+    { "id": 2, "name": "Adidas", "price": "$19.99", "description": "Football Shoes." },
+    { "id": 3, "name": "Puma", "price": "$24.99", "description": "Virat Kohli." },
+    { "id": 4, "name": "Air", "price": "$14.99", "description": "80 hazar ke shoes." },
+    { "id": 5, "name": "Campus", "price": "$29.99", "description": "Budget shoes. " },
+    { "id": 6, "name": "Adibas", "price": "$39.99", "description": "There is no official brand" }
+  ]
+}

@@ -6,11 +6,9 @@ const Description = ({ onQuant, onAdd, onRemove, onSetOrderedQuant }) => {
   return (
     <section className="description">
       <p className="pre">sneaker company</p>
-      <h1>fall limited edition sneakers</h1>
+      <h1>Sneakers</h1>
       <p className="desc">
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer
+        Good Shoes
       </p>
       <div className="price">
         <div className="main-tag">

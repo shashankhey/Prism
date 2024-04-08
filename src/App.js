@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import Gallery from "./Components/Gallery";
 import Description from "./Components/Description";
 import MobileGallery from "./Components/MobileGallery";
+import RelevantProducts from "./Components/RelevantProducts";
 
 function App() {
   const [quant, setQuant] = useState(0);
@@ -33,29 +34,11 @@ function App() {
             onQuant={quant}
             onAdd={addQuant}
             onRemove={removeQuant}
-            onSetOrderedQuant={setOrderedQuant}
+            // onSetOrderedQuant={setOrderedQuant}
           />
         </section>
+        <RelevantProducts />
       </Container>
-      <footer className="attribution">
-        Challenge by{" "}
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Frontend Mentor
-        </a>
-        . Coded by{" "}
-        <a
-          href="https://github.com/Abdelghafour122"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Abdelghafour122
-        </a>
-        .
-      </footer>
     </main>
   );
 }
