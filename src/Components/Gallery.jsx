@@ -10,6 +10,7 @@ import thumb1 from "../Pictures/image-product-1-thumbnail.jpg";
 import thumb2 from "../Pictures/image-product-2-thumbnail.jpg";
 import thumb3 from "../Pictures/image-product-3-thumbnail.jpg";
 import thumb4 from "../Pictures/image-product-4-thumbnail.jpg";
+import backIcon from "./Images/backIcon.png";
 
 const IMAGES = [prod1, prod2, prod3, prod4];
 const THUMBS = [thumb1, thumb2, thumb3, thumb4];
@@ -39,36 +40,42 @@ const Gallery = () => {
   }, [currentImage]);
 
   return (
-    <section className="gallery-holder hide-in-mobile">
-      <section className="gallery">
-        <div className="image">
-          <img src={currentImage} alt="product-1" onClick={handleToggle} />
-        </div>
-        <BackdropGallery
-          handleClose={handleClose}
-          open={open}
-          currentPassedImage={currentPassedImage}
-        />
-        <div className="thumbnails">
-          {THUMBS.map((th, index) => {
-            return (
-              <div
-                className="img-holder"
-                key={index}
-                onClick={(e) => {
-                  handleClick(index);
-                  removeActivatedClass(e.currentTarget.parentNode);
-                  e.currentTarget.childNodes[0].classList.toggle("activated");
-                }}
-              >
-                <div className={`outlay ${index === 0 && "activated"}`}></div>
-                <img src={th} alt={`product-${index + 1}`} />
-              </div>
-            );
-          })}
-        </div>
+      
+      <section className="gallery-holder hide-in-mobile">
+        <section className="gallery">
+          <div className="image">
+            <img
+              src={currentImage}
+              alt="product-1"
+              onClick={handleToggle}
+              
+            />
+          </div>
+          <BackdropGallery
+            handleClose={handleClose}
+            open={open}
+            currentPassedImage={currentPassedImage}
+          />
+          <div className="thumbnails">
+            {THUMBS.map((th, index) => {
+              return (
+                <div
+                  className="img-holder"
+                  key={index}
+                  onClick={(e) => {
+                    handleClick(index);
+                    removeActivatedClass(e.currentTarget.parentNode);
+                    e.currentTarget.childNodes[0].classList.toggle("activated");
+                  }}
+                >
+                  <div className={`outlay ${index === 0 && "activated"}`}></div>
+                  <img src={th} alt={`product-${index + 1}`} />
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </section>
-    </section>
   );
 };
 

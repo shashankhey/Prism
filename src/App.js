@@ -25,7 +25,7 @@ function App() {
   };
   return (
     <main className="App">
-      <Container component="section" maxWidth={"lg"}>
+      <Container component="section" maxWidth={"xxl"}>
         <Navbar onOrderedQuant={orderedQuant} onReset={resetQuant} />
         <section className="core">
           <Gallery />

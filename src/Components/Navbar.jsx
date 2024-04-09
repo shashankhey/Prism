@@ -5,6 +5,8 @@ import avatar from "../Pictures/image-avatar.png";
 import { Badge, IconButton } from "@mui/material";
 import Cart from "./Cart";
 import MobileLinksDrawer from "./MobileLinksDrawer";
+import "./Navbar.css";
+import searchImg from './Images/search.png'
 
 const Navbar = ({ onOrderedQuant, onReset }) => {
   const [showCart, setShowCart] = useState(false);
@@ -14,9 +16,9 @@ const Navbar = ({ onOrderedQuant, onReset }) => {
   };
 
   return (
-    <header>
+    <header style={{display: "flex", marginTop: "3em", gap: "10px", justifyContent: "space-between", marginLeft: "3em"}}>
       <nav>
-        <section className="left">
+        <section className="left " style={{width: "50%", display: "flex", gap: "5em"}}>
           <div className="imgs">
             <img
               className="hide-in-desktop"
@@ -27,70 +29,132 @@ const Navbar = ({ onOrderedQuant, onReset }) => {
               }}
             />
             <MobileLinksDrawer onHandleOpen={handleOpen} onOpen={open} />
-            <img src={logo} alt="logo" />
+            <div className="logo">LOGO</div>
           </div>
-          <div className="links hide-in-mobile">
-            <ul>
-              <li>
-                <button>Collections</button>
-              </li>
-              <li>
-                <button>Men</button>
-              </li>
-              <li>
-                <button>Women</button>
-              </li>
-              <li>
-                <button>About</button>
-              </li>
-              <li>
-                <button>Contact</button>
-              </li>
-            </ul>
+          <div className="links hide-in-mobile" style={{width: "100%"}}>
+            <div className="search-container-div" style={{border: "1px solid #ccc", padding: "0px", height: "3.5em", backgroundColor: "#ccc", borderRadius: "10px"}}>
+              <form
+                className="search-container"
+              >
+                <div className="ps-form__categories">
+                  <select className="select-dropdown hide-in-mobile">
+                    <option>All Categories</option>
+                    <option>Nike</option>
+                    <option>Puma</option>
+                    <option>Adidas</option>
+                    <option>Air</option>
+                  </select>
+                </div>
+                <div className="search-input-div">
+                  <input
+                    className="search-input"
+                    type="text"
+                    placeholder="I'm shopping for..."
+                  />
+                </div>
+                <button className="search-btn"><img src={searchImg} /></button>
+                <div>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
-        <div className="right">
-          <IconButton
-            disableRipple
-            onClick={() => {
-              setShowCart(!showCart);
-            }}
-          >
-            <Badge
-              invisible={onOrderedQuant === 0}
-              badgeContent={onOrderedQuant}
-              variant="standard"
-              sx={{
-                color: "#fff",
-                fontFamily: "Kumbh sans",
-                fontWeight: 700,
-                "& .css-fvc8ir-MuiBadge-badge ": {
-                  fontFamily: "kumbh sans",
-                  fontWeight: 700,
-                },
-              }}
-            >
-              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-                  fill="#69707D"
-                  fillRule="nonzero"
-                />
-              </svg>
-            </Badge>
-          </IconButton>
-          <img src={avatar} alt="img-avatar" className="avatar" />
-          {showCart && (
-            <Cart
-              onOrderedQuant={onOrderedQuant}
-              onReset={onReset}
-              onShow={setShowCart}
+        <div className="right hide-in-mobile">
+          <div className="div-11 hide-in-mobile">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7355257c666630076711e20163ae6a1120d9e6e81dbc5e22c0379d3661cc5481?apiKey=1823fe6d8b2e49fab351d5480143daeb&"
+              className="img-4 hide-in-mobile"
             />
-          )}
+            <div className="div-12 hide-in-mobile">Browse All Categories</div>
+          </div>
         </div>
       </nav>
     </header>
   );
 };
+
+// import * as React from "react";
+
+// function MyComponent() {
+//   return (
+//     <>
+//       <div className="div">
+//         <div className="div-2">
+//           <div className="div-3">All Categories</div>
+//           <img
+//             loading="lazy"
+//             src="https://cdn.builder.io/api/v1/image/assets/TEMP/36e9b04ef6a6c9f8f35bbb4c24a305d645762e26b2d6b9fd06530b11f9e5fff0?apiKey=1823fe6d8b2e49fab351d5480143daeb&"
+//             className="img"
+//           />
+//         </div>
+//         <div className="div-4">
+//           <img
+//             loading="lazy"
+//             src="https://cdn.builder.io/api/v1/image/assets/TEMP/c88f867bb998fc2e2d771aad952fe51257a27342c604db274dabf5df1f05fc84?apiKey=1823fe6d8b2e49fab351d5480143daeb&"
+//             className="img-2"
+//           />
+//           <div className="div-5">Search for items...</div>
+//         </div>
+//       </div>
+//       <style jsx>{`
+//         .div {
+//           border-radius: 8px 0px 0px 8px;
+//           background-color: #f3f3f3;
+//           display: flex;
+//           gap: 12px;
+//           font-size: 14px;
+//           color: var(--Main-color, #2f294d);
+//           flex-grow: 1;
+//           flex-basis: auto;
+//           padding: 12px;
+//         }
+//         @media (max-width: 991px) {
+//           .div {
+//             flex-wrap: wrap;
+//             padding-right: 20px;
+//           }
+//         }
+//         .div-2 {
+//           justify-content: center;
+//           display: flex;
+//           gap: 1px;
+//           font-weight: 500;
+//         }
+//         .div-3 {
+//           font-family: Poppins, sans-serif;
+//         }
+//         .img {
+//           aspect-ratio: 1;
+//           object-fit: auto;
+//           object-position: center;
+//           width: 18px;
+//           margin: auto 0;
+//         }
+// .div-4 {
+//   justify-content: center;
+//   display: flex;
+//   gap: 11px;
+//   font-weight: 400;
+// }
+//         .img-2 {
+//           aspect-ratio: 0.08;
+//           object-fit: auto;
+//           object-position: center;
+//           width: 1px;
+//           stroke-width: 1px;
+//           stroke: var(--Main-color, #2f294d);
+//           border-color: rgba(47, 41, 77, 1);
+//           border-style: solid;
+//           border-width: 1px;
+//           margin: auto 0;
+//         }
+//         .div-5 {
+//           font-family: Poppins, sans-serif;
+//         }
+//       `}</style>
+//     </>
+//   );
+// }
 
 export default Navbar;

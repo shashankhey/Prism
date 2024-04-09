@@ -1,12 +1,19 @@
 import React from "react";
 import CartIcon from "./Icons/CartIcon";
 import QuantityButton from "./QuantityButton";
+import Rating from '@mui/material/Rating';
 
 const Description = ({ onQuant, onAdd, onRemove, onSetOrderedQuant }) => {
+  // const [value, setValue] = (2);
   return (
     <section className="description">
+      
       <p className="pre">sneaker company</p>
       <h1>Sneakers</h1>
+      <p style={{color: "#ccc"}}>Free 2 day shipping 1 Year waranty</p>
+      <Rating
+        name="simple-controlled"
+      />
       <p className="desc">
         Good Shoes
       </p>

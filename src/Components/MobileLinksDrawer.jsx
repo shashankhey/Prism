@@ -33,19 +33,7 @@ const MobileLinksDrawer = ({ onOpen, onHandleOpen }) => {
         <section className="mobile-links">
           <ul>
             <li>
-              <button>Collections</button>
-            </li>
-            <li>
-              <button>Men</button>
-            </li>
-            <li>
-              <button>Women</button>
-            </li>
-            <li>
-              <button>About</button>
-            </li>
-            <li>
-              <button>Contact</button>
+              <button style={{backgroundColor: "#0064d2", padding: "10px", borderRadius: "5px"}}>Browse All Categories</button>
             </li>
           </ul>
         </section>
