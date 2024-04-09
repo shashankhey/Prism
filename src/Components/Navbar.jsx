@@ -17,7 +17,7 @@ const Navbar = ({ onOrderedQuant, onReset }) => {
 
   return (
     <header style={{display: "flex", marginTop: "3em", gap: "10px", justifyContent: "space-between", marginLeft: "3em"}}>
-      <nav>
+      {/* <nav style={{marginLeft: "4em"}}> */}
         <section className="left " style={{width: "50%", display: "flex", gap: "5em"}}>
           <div className="imgs">
             <img
@@ -69,7 +69,7 @@ const Navbar = ({ onOrderedQuant, onReset }) => {
             <div className="div-12 hide-in-mobile">Browse All Categories</div>
           </div>
         </div>
-      </nav>
+      {/* </nav> */}
     </header>
   );
 };
