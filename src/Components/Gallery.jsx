@@ -40,15 +40,44 @@ const Gallery = () => {
   }, [currentImage]);
 
   return (
-      
-      <section className="gallery-holder hide-in-mobile">
+    <div >
+      <div
+      className="product-header hide-in-mobile"
+        style={{
+          display: "flex",
+          gap: "1em",
+          // justifyContent: "space-around",
+          alignItems: "center",
+          width: "100%",
+          marginBottom: "2em",
+          marginLeft: "2.5em"
+        }}
+      >
+        <img
+          src={backIcon}
+          style={{ display: "flex", height: "3em", width: "3em", gap: "0.5em" }}
+        />
+        <p style={{ width: "50%" }}>
+          Back to previous page | Listed in category:{" "}
+          <a href="#" style={{ color: "#0064d2" }}>
+            Cell Phones & Accessories
+          </a>
+        </p>
+        {/* <p style={{ alignItems: "center", marginLeft: "10em" }}>
+          <a href="#" style={{ color: "#0064d2" }}>
+            Cell Phones & Smartphones
+          </a>
+        </p> */}
+      </div>
+
+      <section className="gallery-holder hide-in-mobile" >
         <section className="gallery">
           <div className="image">
             <img
               src={currentImage}
               alt="product-1"
               onClick={handleToggle}
-              
+              style={{ width: "55%", height: "50%" }}
             />
           </div>
           <BackdropGallery
@@ -76,6 +105,7 @@ const Gallery = () => {
           </div>
         </section>
       </section>
+    </div>
   );
 };
 
